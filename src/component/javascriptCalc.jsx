@@ -26,19 +26,6 @@ class JavascriptClaculator extends Component {
         };
     Zero = ()=>{
         //start
-
-        // traditional metod 
-        /* const display = this.state.display;
-            if (display[display.length - 1] === "+" || display[display.length - 1] === "-" || display[display.length - 1] === "*" || display[display.length - 1] === "/" || display === "") {
-                this.setState({display: this.state.display + zero})
-            } else if (display.includes("=")) {
-                 this.setState({display: zero});
-            } else if (display === "0") {
-                this.setState({display: zero});
-            } else {
-                 this.setState({display: this.state.display + zero});
-            } */
-
         // advanced method 
         this.setState((prevState)=>{
             // distructing the object state 
@@ -341,43 +328,6 @@ class JavascriptClaculator extends Component {
       return({display: display + add});
     })
 
-          // traditional method  
-        /* const display = this.state.display;
-         const array = display.split("");
-        const lastItem = display[display.length - 1];
-        const nextToLastItem = display[display.length - 2];
-        add = "+"
-        if (display.length < 2) {
-            if (display === "" || display === "*" || display === "-" || display === "/" || display === "+") {
-               this.setState({display: add})
-            } else {
-                this.setState({display: this.state.display + add})
-            }
-        }
-        if (display.length >= 2) {
-            if (display.length === 2) {
-                if (lastItem === "*" || lastItem === "/" || lastItem === "-" || lastItem === "+" || lastItem === ".") {
-                    array[array.length-1] = add;
-                 this.setState({display: array.join("")})
-                } else {
-                     this.setState({display: this.state.display + add})
-                }
-            }
-            if (display.length > 2) {
-                if (lastItem === "*" || lastItem === "/" || lastItem === "+" || (lastItem === "-" && (nextToLastItem !== "*" && nextToLastItem !== "/"))) {
-                    array[array.length-1] = add;
-                 this.setState({display: array.join("")})
-                } else if (lastItem === "-" && (nextToLastItem === "*" || nextToLastItem === "/")) {
-                     array.pop();
-                    array[array.length-1] = add;
-                 this.setState({display: array.join("")})
-                } else if (display.includes("=")) {
-                    this.setState({display: this.state.input + add})
-                } else {
-                    this.setState({display: this.state.display + add})
-                }
-            }
-        } */
         add = ""
         zero = "0";
         // end
@@ -413,45 +363,6 @@ class JavascriptClaculator extends Component {
       return({display: display + mult});
     })
 
-
-        // traditional method 
-       /* const display = this.state.display;
-        const array = display.split("");
-        const lastItem = array[array.length - 1];
-        const nextToLastItem = array[array.length - 2];
-        mult = "*";
-        if (array.length < 2) {
-            if (display === "" || display === "+" || display === "-" || display === "/" || display === "*") {
-               this.setState({display: mult})
-            } else {
-                this.setState({display: this.state.display + mult})
-            }
-        }
-        if (array.length >= 2) {
-            if (array.length === 2) {
-                if (lastItem === "*" || lastItem === "/" || lastItem === "-" || lastItem === "+" || lastItem === ".") {
-                    array[array.length - 1] = mult;
-                   this.setState({display: array.join("")})
-                } else {
-                    this.setState({display: this.state.display + mult})
-                }
-            }
-            if (array.length > 2) {
-                if (lastItem === "*" || lastItem === "+" || lastItem === "/" || (lastItem === "-" && (nextToLastItem !== "*" && nextToLastItem !== "/"))) {
-                    array[array.length - 1] = mult;
-                    this.setState({display: array.join("")})
-                } else if (lastItem === "-" && (nextToLastItem === "*" || nextToLastItem === "/")) {
-                    array.pop();
-                    array[array.length - 1] = mult;
-                    this.setState({display: array.join("")})
-                } else {
-                   this.setState({display: this.state.display + mult})
-                }
-            }
-        }
-        if (display.includes("=")) {
-            this.setState({display: this.state.input + mult})
-        } */
         mult = "";
         zero = "0";
         // end
@@ -487,44 +398,6 @@ class JavascriptClaculator extends Component {
       return({display: display + div});
     })
 
-            // traditional method 
-       /* const display = this.state.display;
-        const array = display.split("");
-        const lastItem = array[array.length - 1];
-        const nextToLastItem = array[array.length - 2];
-        div = "/";
-        if (array.length < 2) {
-            if (display === "" || display === "+" || display === "-" || display === "/" || display === "*") {
-                this.setState({display: div})
-            } else {
-                this.setState({display: this.state.display + div})
-            }
-        }
-        if (array.length >= 2) {
-            if (array.length === 2) {
-                if (lastItem === "*" || lastItem === "/" || lastItem === "-" || lastItem === "+" || lastItem === ".") {
-                    array[array.length - 1] = div;
-                    this.setState({display: array.join("")})
-                } else {
-                    this.setState({display: this.state.display + div})
-                }
-            }
-            if (array.length > 2) {
-                if (lastItem === "*" || lastItem === "+" || lastItem === "/" || (lastItem === "-" && (nextToLastItem !== "*" && nextToLastItem !== "/"))) {
-                    array[array.length - 1] = div;
-                   this.setState({display: array.join("")})
-                } else if (lastItem === "-" && (nextToLastItem === "*" || nextToLastItem === "/")) {
-                    array.pop();
-                    array[array.length - 1] = div;
-                    this.setState({display: array.join("")})
-                } else {
-                    this.setState({display: this.state.display + div})
-                }
-            }
-        }
-        if (display.includes("=")) {
-            this.setState({display: this.state.input + div})
-        } */
         div = "";
         zero = "0";
             // end
@@ -546,46 +419,6 @@ class JavascriptClaculator extends Component {
      return {display: display + sub}
   })
 
-        // traditional method 
-        /* const display = this.state.display;
-        const array = display.split("");
-        const lastItem = array[array.length - 1];
-        const nextToLastItem = array[array.length - 2];
-        sub = "-";
-        if (array.length < 2) {
-            if (display === "" || display === "+" || display === "-" || display === "/" || display === "*") {
-                this.setState({display: sub})
-            } else {
-                this.setState({display: this.state.display + sub})
-            }
-        }
-        if (array.length >= 2) {
-            if (array.length === 2) {
-                if (lastItem === "-" || lastItem === "+" || lastItem === ".") {
-                    array[array.length - 1] = sub;
-                    this.setState({display: array.join("")})
-                } else {
-                   this.setState({display: this.state.display + sub})
-                }
-            }
-            if (array.length > 2) {
-                if (lastItem === "*" || lastItem === "/") {
-                    this.setState({display: this.state.display + sub})
-                } else if (lastItem === "+" || (lastItem === "-" && (nextToLastItem !== "*" && nextToLastItem !== "/"))) {
-                    array[array.length - 1] = sub;
-                   this.setState({display: array.join("")})
-                } else if (lastItem === "-" && (nextToLastItem === "*" || nextToLastItem === "/")) {
-                    array.pop();
-                    array[array.length - 1] = sub;
-                    this.setState({display: array.join("")})
-                } else {
-                   this.setState({display: this.state.display + sub})
-                }
-            }
-        }
-        if (display.includes("=")) {
-            this.setState({display: this.state.input + sub})
-        } */
         sub = "";
         zero = "0";
         //end
